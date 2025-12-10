@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.Mensajes"
+             Title="Mensajes">
+    <ContentPage.BindingContext>
+        <vm:MensajesViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="*,Auto" Padding="15">
+
+
+        <CollectionView ItemsSource="{Binding Mensajes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5"
+                           CornerRadius="15"
+                           BackgroundColor="White">
+
+                        <Grid ColumnDefinitions="*,Auto">
+
+
+                            <Label Text="{Binding Texto}"
+                                   FontSize="16" />
+
+
+                            <Button Text="X"
+                                    Grid.Column="1"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="Blue"
+                                    TextColor="White"
+                                    CornerRadius="15"
+                                    WidthRequest="45"
+                                    HeightRequest="45"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    Command="{Binding BindingContext.EliminarCommand,
+                                                      Source={x:Reference PageRoot}}"
+                                    CommandParameter="{Binding}" />
+
+                        </Grid>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+
+            <Entry Grid.Column="0"
+                   Placeholder="Escribe un mensaje"
+                   Text="{Binding MensajeNuevo}"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   HeightRequest="50"/>
+
+            <Button Grid.Column="1"
+                    Text="Enviar"
+                    Command="{Binding EnviarCommand}"
+                    BackgroundColor="#005BBB"
+                    TextColor="White"
+                    WidthRequest="90"
+                    HeightRequest="45"
+                    CornerRadius="20"/>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.BienvenidaPage"
+             Title="BienvenidaPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="30" Spacing="25"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
+            <Label Text="RideUni"
+               FontSize="40"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#005BBB"/>
+
+            <Label Text="Tu viaje empieza aqui"
+               FontSize="18"
+               HorizontalOptions="Center"
+               TextColor="#444"/>
+        </VerticalStackLayout>
+
+        <Label Text="¡Bienvenido a RideUni!"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Margin="0,20,0,0"
+           TextColor="#003f7f"/>
+
+        <Label x:Name="LblUsuario"
+           FontSize="20"
+           HorizontalOptions="Center"
+           TextColor="#333333"/>
+
+        <Button Text="Continuar"
+            CornerRadius="12"
+            HeightRequest="55"
+            FontAttributes="Bold"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            Margin="0,30,0,0"
+            WidthRequest="200"
+            Clicked="BtnContinuar_Clicked"/>
+
+        <Button Text="Ver mas raites"
+            CornerRadius="12"
+            HeightRequest="55"
+            FontAttributes="Bold"
+            BackgroundColor="#005BBB"
+            TextColor="White"
+            Margin="0,10,0,0"
+            WidthRequest="200"
+            Clicked="BtnVerMasRaites_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

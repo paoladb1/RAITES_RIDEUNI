@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.RegistroPage"
+             Title="RegistroPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label Text="CREAR CUENTA"
+            FontSize="32" FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+            <Label Text="Nombre Completo" />
+            <Entry Placeholder="Ej: Ana María López"
+            Text="{Binding NombreCompleto}"/>
+
+            <Label Text="Correo Electronico" />
+            <Entry Placeholder="ejemplo@dominio.com"
+            Keyboard="Email"
+            Text="{Binding Correo}"/>
+
+            <Label Text="Contraseña" />
+            <Entry Placeholder="Minimo 8 caracteres"
+            IsPassword="True"
+            Text="{Binding Contraseña}"/>
+
+            <Label Text="Selecciona tu Rol" FontAttributes="Bold"/>
+
+            <Grid ColumnDefinitions="*,*">
+                <RadioButton Content="Conductor"
+                      GroupName="UserRole"
+                      IsChecked="{Binding IsConductor}" />
+
+                <RadioButton Grid.Column="1"
+                      Content="Solicitante"
+                      GroupName="UserRole"
+                      IsChecked="{Binding IsSolicitante}" />
+            </Grid>
+
+            <Button Text="REGISTRARME"
+             HeightRequest="55"
+             Command="{Binding RegistrarCommand}" />
+
+            <Button Text="¿Ya tienes cuenta? Inicia sesion"
+             BackgroundColor="Transparent"
+             Command="{Binding IrALoginCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

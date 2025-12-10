@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.EditarPerfilPage"
+             Title="EditarPerfilPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label Text="Editar Perfil"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#003E7E"
+                HorizontalOptions="Center"/>
+
+            <Entry Placeholder="Nombre"
+                Text="{Binding Nombre}" />
+
+            <Entry Placeholder="Rol"
+                Text="{Binding Rol}" />
+
+            <Entry Placeholder="Universidad"
+                Text="{Binding Universidad}" />
+
+            <Entry Placeholder="Grupo"
+                Text="{Binding Grupo}" />
+
+            <Entry Placeholder="Disponible"
+                Text="{Binding Disponible}" />
+
+            <Editor Placeholder="Descripcion"
+                 AutoSize="TextChanges"
+                 Text="{Binding Descripcion}" />
+
+            <Button Text="Guardar"
+                 BackgroundColor="#005BBB"
+                 TextColor="White"
+                 CornerRadius="15"
+                 Command="{Binding GuardarCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

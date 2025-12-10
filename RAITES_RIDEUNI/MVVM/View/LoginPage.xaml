@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.LoginPage"
+     <ContentPage.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#89CFF0" Offset="0.0"/>
+        <GradientStop Color="#E0F7FF" Offset="1.0"/>
+    </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Iniciar Sesi�n"
+            FontSize="24"
+            TextColor="#003E7E"
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="EntryEmail"
+            Placeholder="Correo electr�nico"
+            Keyboard="Email"
+            TextColor="#003E7E" />
+
+        <Entry x:Name="EntryPassword"
+            Placeholder="Contrase�a"
+            IsPassword="True"
+            TextColor="#003E7E" />
+
+        <Button Text="Entrar"
+             BackgroundColor="#2196F3"
+             TextColor="White"
+             CornerRadius="20"
+             Clicked="OnLoginClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

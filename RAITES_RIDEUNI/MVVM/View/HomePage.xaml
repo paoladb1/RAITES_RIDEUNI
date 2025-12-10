@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAITES_RIDEUNI.MVVM.View.HomePage"
+             Title="HomePage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#89CFF0" Offset="0.0"/>
+            <GradientStop Color="#E0F7FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="25">
+
+            <Label Text="Bienvenid@s a RideUni"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#003E7E"
+                HorizontalOptions="Center"/>
+
+            <Label Text="Raites disponibles"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="#003E7E"/>
+
+            <CollectionView ItemsSource="{Binding Rides}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="15"
+                            Padding="15"
+                            Margin="0,5"
+                            BackgroundColor="White"
+                            HasShadow="True"
+                            BorderColor="#DDD">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto">
+                                <Label Text="{Binding}"
+                                    FontSize="16"
+                                    FontAttributes="Bold"
+                                    TextColor="#003E7E"
+                                    VerticalOptions="Center"
+                                    LineBreakMode="TailTruncation"/>
+                                <Button Text="Solicitar"
+                                     Grid.Column="1"
+                                     BackgroundColor="Blue"
+                                     TextColor="White"
+                                     CornerRadius="12"
+                                     HeightRequest="38"
+                                     WidthRequest="100"
+                                     Command="{Binding BindingContext.SolicitarCommand, Source={x:Reference PageRoot}}"
+                                     CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Ver mis Raites"
+                 BackgroundColor="#005BBB"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 CornerRadius="12"
+                 HeightRequest="50"
+                 Clicked="BtnVerMisRaites_Clicked"/>
+
+            <Button Text="Crear Raite"
+                 BackgroundColor="#FF7F50"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 CornerRadius="12"
+                 HeightRequest="50"
+                 Command="{Binding IrACrearRaiteCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
