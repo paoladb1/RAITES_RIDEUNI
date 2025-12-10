@@ -7,6 +7,6 @@ public partial class MisRaites : ContentPage
 	public MisRaites()
 	{
 		InitializeComponent();
-        BindingContext = new MisRaitesViewModel();
+        BindingContext = new MisRidesViewModel();
     }
 }

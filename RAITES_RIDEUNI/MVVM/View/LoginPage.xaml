@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RAITES_RIDEUNI.MVVM.View.LoginPage"
-     <ContentPage.Background>
+                Title="LoginPage">
+    <ContentPage.Background>
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#89CFF0" Offset="0.0"/>
         <GradientStop Color="#E0F7FF" Offset="1.0"/>

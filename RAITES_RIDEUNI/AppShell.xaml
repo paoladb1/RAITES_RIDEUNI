@@ -3,13 +3,12 @@
     x:Class="RAITES_RIDEUNI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:RAITES_RIDEUNI"
+    xmlns:views="clr-namespace:RAITES_RIDEUNI.MVVM.View"
     Title="RAITES_RIDEUNI">
 
     <FlyoutItem Title="Inicio">
         <ShellContent ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
     </FlyoutItem>
-
 
     <FlyoutItem Title="Pedir Ride">
         <ShellContent ContentTemplate="{DataTemplate views:PedirRide}" />
@@ -19,31 +18,25 @@
         <ShellContent ContentTemplate="{DataTemplate views:Perfil}" />
     </FlyoutItem>
 
-
-    <FlyoutItem Title="Mis Rides">
-        <ShellContent ContentTemplate="{DataTemplate views:MisRides}" />
+    <FlyoutItem Title="Mis Raites">
+        <ShellContent ContentTemplate="{DataTemplate views:MisRaites}" />
     </FlyoutItem>
-
 
     <FlyoutItem Title="Mensajes">
         <ShellContent ContentTemplate="{DataTemplate views:Mensajes}" />
     </FlyoutItem>
 
-
     <FlyoutItem Title="Inicio Raite">
         <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
-
 
     <FlyoutItem Title="Crear Raite">
         <ShellContent ContentTemplate="{DataTemplate views:CrearRaitePage}" />
     </FlyoutItem>
 
-
     <FlyoutItem Title="Detalle Raite">
         <ShellContent ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
     </FlyoutItem>
-
 
     <FlyoutItem Title="Solicitar Raite">
         <ShellContent ContentTemplate="{DataTemplate views:SolicitarRaitePage}" />

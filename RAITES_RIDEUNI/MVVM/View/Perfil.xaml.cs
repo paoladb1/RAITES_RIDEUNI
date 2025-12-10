@@ -21,6 +21,6 @@ public partial class Perfil : ContentPage
 
     private async void EditarPerfil_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new EditarPerfil());
+        await Navigation.PushAsync(new EditarPerfilPage());
     }
 }

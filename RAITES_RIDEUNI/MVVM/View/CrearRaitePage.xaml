@@ -4,9 +4,7 @@
              x:Class="RAITES_RIDEUNI.MVVM.View.CrearRaitePage"
              Title="CrearRaitePage">
 
-    <ContentPage.BindingContext>
-        <vm:CrearRaiteViewModel />
-    </ContentPage.BindingContext>
+    
 
     <ScrollView>
         <VerticalStackLayout Padding="25" Spacing="20">

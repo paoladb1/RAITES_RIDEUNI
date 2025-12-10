@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RAITES_RIDEUNI.MVVM.View.Mensajes"
              Title="Mensajes">
-    <ContentPage.BindingContext>
-        <vm:MensajesViewModel />
-    </ContentPage.BindingContext>
+  
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

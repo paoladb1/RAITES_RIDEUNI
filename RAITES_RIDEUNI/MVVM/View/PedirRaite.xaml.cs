@@ -11,8 +11,13 @@ public partial class PedirRide : ContentPage
         InitializeComponent();
     }
 
+    private void InitializeComponent()
+    {
+        throw new NotImplementedException();
+    }
+
     private async void OnBuscarClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MisRides());
+        await Navigation.PushAsync(new MisRaites());
     }
 }

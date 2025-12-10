@@ -1,6 +1,6 @@
 using Microsoft.Maui.Controls;
 using RAITES_RIDEUNI.MVVM.View;
-using Ride.MVVM.View;
+
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -40,7 +40,7 @@ namespace Ride.MVVM.ViewModel
                 return;
             }
 
-            string raite = $"{Origen} ? {Destino}  |  {FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm}  |  Asientos: {AsientosDisponibles}  |  ${PrecioPorAsiento}";
+            string raite = $"{Origen} - {Destino}    {FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm}  Asientos: {AsientosDisponibles}    ${PrecioPorAsiento}";
             Raites.Add(raite);
 
             await Application.Current.MainPage.DisplayAlert("Éxito", "Raite publicado correctamente.", "OK");
