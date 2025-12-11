@@ -42,6 +42,7 @@ public class PerfilViewModel : INotifyPropertyChanged
         Descripcion = PerfilService.Descripcion;
     }
 
+    [Obsolete]
     private void GuardarDatos()
     {
         PerfilService.Nombre = Nombre;
@@ -52,7 +53,7 @@ public class PerfilViewModel : INotifyPropertyChanged
         PerfilService.Descripcion = Descripcion;
 
         Application.Current.MainPage.DisplayAlert("Éxito", "Datos guardados correctamente", "OK");
-        Shell.Current.GoToAsync(".."); // Regresa a Perfil
+        Shell.Current.GoToAsync(".."); 
     }
 
     void OnChanged([CallerMemberName] string name = null)

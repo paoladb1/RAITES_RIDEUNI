@@ -1,3 +1,4 @@
+
 namespace RAITES_RIDEUNI.MVVM.View;
 
 public partial class BienvenidaPage : ContentPage
@@ -6,4 +7,9 @@ public partial class BienvenidaPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void InitializeComponent()
+    {
+        throw new NotImplementedException();
+    }
 }

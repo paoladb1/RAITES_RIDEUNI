@@ -12,7 +12,7 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
 
         public ICommand IrACrearRaiteCommand { get; }
         public ICommand SolicitarCommand { get; }
-        public ICommand EliminarCommand { get; set; }   // ← ← AQUÍ EL CAMBIO
+        public ICommand EliminarCommand { get; set; }   
 
         public event PropertyChangedEventHandler PropertyChanged;
 

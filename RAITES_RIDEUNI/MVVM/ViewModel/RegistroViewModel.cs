@@ -20,6 +20,7 @@ public class RegistroViewModel
         IrALoginCommand = new Command(async () => await Shell.Current.GoToAsync(nameof(LoginPage)));
     }
 
+    [Obsolete]
     private async Task Registrar()
     {
         if (string.IsNullOrWhiteSpace(NombreCompleto) || string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(Contraseña))

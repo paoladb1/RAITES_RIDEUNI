@@ -5,8 +5,6 @@ namespace RAITES_RIDEUNI.MVVM.View;
 public partial class SolicitarRaitePage : ContentPage
 {
     public HomeViewModel HomeVM { get; private set; }
-
-    // 🔥 CONSTRUCTOR NUEVO — NECESARIO PARA MAUI SHELL
     public SolicitarRaitePage()
     {
         InitializeComponent();
@@ -17,7 +15,6 @@ public partial class SolicitarRaitePage : ContentPage
         HomeVM.EliminarCommand ??= new Command<string>(EliminarRide);
     }
 
-    // 🔥 ESTE ES EL TUYO — NO SE QUITÓ NI SE CAMBIÓ
     public SolicitarRaitePage(HomeViewModel homeVM)
     {
         InitializeComponent();

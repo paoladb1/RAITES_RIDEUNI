@@ -7,20 +7,29 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
     public class ViajesDisponiblesViewModel : BindableObject
     {
         public ObservableCollection<string> ListaRaites { get; set; }
-        public ICommand PedirRideCommand { get; }
 
+        public ICommand PedirRideCommand { get; }
+        public ICommand VolverInicioCommand { get; }
+
+        [Obsolete]
         public ViajesDisponiblesViewModel()
         {
-            // Lista directamente ligada a la colección estática de CrearRaiteViewModel
+            
             ListaRaites = CrearRaiteViewModel.Raites;
 
-            PedirRideCommand = new Command<string>(async (ride) =>
+            PedirRideCommand = new Command<string>(static async (ride) =>
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Viaje aceptado",
                     $"Tu viaje ha sido aceptado.\n\nDetalles:\n{ride}",
                     "OK"
                 );
+            });
+
+            VolverInicioCommand = new Command(async () =>
+            {
+                
+                await Shell.Current.GoToAsync("//HomePage");
             });
         }
     }

@@ -16,7 +16,7 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
         public int AsientosDisponibles { get; set; }
         public decimal PrecioPorAsiento { get; set; }
 
-        // Colección compartida para ViajesDisponiblesPage
+      
         public static ObservableCollection<string> Raites { get; set; } = new ObservableCollection<string>();
 
         public ICommand PublicarCommand { get; }
@@ -38,12 +38,11 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
 
             string raite = $"{Origen} - {Destino}    {FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm}  Asientos: {AsientosDisponibles}    ${PrecioPorAsiento}";
 
-            // Se agrega automáticamente a la colección estática
             Raites.Add(raite);
 
             await Application.Current.MainPage.DisplayAlert("Éxito", "Raite publicado correctamente.", "OK");
 
-            // Limpiar campos
+          
             Origen = Destino = "";
             AsientosDisponibles = 0;
             PrecioPorAsiento = 0;
@@ -57,7 +56,7 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
             OnPropertyChanged(nameof(AsientosDisponibles));
             OnPropertyChanged(nameof(PrecioPorAsiento));
 
-            // Navegar automáticamente a ViajesDisponiblesPage
+
             await Shell.Current.GoToAsync(nameof(ViajesDisponiblesPage));
         }
     }

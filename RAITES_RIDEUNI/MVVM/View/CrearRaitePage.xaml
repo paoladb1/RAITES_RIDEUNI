@@ -14,30 +14,30 @@
                    HorizontalOptions="Center"/>
 
             <Label Text="Punto de Origen" FontAttributes="Bold" TextColor="#003E7E"/>
-            <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False">
-                <Entry Placeholder="Ubicacion actual" TextColor="#003E7E" Text="{Binding Origen}" HeightRequest="50"/>
+            <Frame BackgroundColor="Black" CornerRadius="15" Padding="0" HasShadow="False">
+                <Entry Placeholder="Ubicacion actual" TextColor="White" Text="{Binding Origen}" HeightRequest="50"/>
             </Frame>
 
             <Label Text="Destino" FontAttributes="Bold" TextColor="#003E7E"/>
-            <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False">
-                <Entry Placeholder="A donde vas?" TextColor="#003E7E" Text="{Binding Destino}" HeightRequest="50"/>
+            <Frame BackgroundColor="Black" CornerRadius="15" Padding="0" HasShadow="False">
+                <Entry Placeholder="A donde vas?" TextColor="White" Text="{Binding Destino}" HeightRequest="50"/>
             </Frame>
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-                <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50">
-                    <DatePicker Date="{Binding FechaSalida}" TextColor="#003E7E"/>
+                <Frame BackgroundColor="Black" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50">
+                    <DatePicker Date="{Binding FechaSalida}" TextColor="White"/>
                 </Frame>
-                <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50" Grid.Column="1">
-                    <TimePicker Time="{Binding HoraSalida}" TextColor="#003E7E"/>
+                <Frame BackgroundColor="Black" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50" Grid.Column="1">
+                    <TimePicker Time="{Binding HoraSalida}" TextColor="White"/>
                 </Frame>
             </Grid>
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-                <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50">
-                    <Entry Placeholder="Asientos (Ej: 3)" TextColor="#003E7E" Text="{Binding AsientosDisponibles}" Keyboard="Numeric"/>
+                <Frame BackgroundColor="white" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Asientos (Ej: 3)" TextColor="White" Text="{Binding AsientosDisponibles}" Keyboard="Numeric"/>
                 </Frame>
-                <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50" Grid.Column="1">
-                    <Entry Placeholder="Precio por asiento (MXN)" TextColor="#003E7E" Text="{Binding PrecioPorAsiento}" Keyboard="Numeric"/>
+                <Frame BackgroundColor="Black" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50" Grid.Column="1">
+                    <Entry Placeholder="Precio por asiento (MXN)" TextColor="White" Text="{Binding PrecioPorAsiento}" Keyboard="Numeric"/>
                 </Frame>
             </Grid>
 
@@ -47,8 +47,7 @@
                     TextColor="White"
                     FontAttributes="Bold"
                     CornerRadius="20"
-                    Command="{Binding PublicarCommand}"
-                    HorizontalOptions="FillAndExpand">
+                    Command="{Binding PublicarCommand}">
                 <Button.Triggers>
                     <Trigger TargetType="Button" Property="IsPressed" Value="True">
                         <Setter Property="BackgroundColor" Value="#155AB6"/>

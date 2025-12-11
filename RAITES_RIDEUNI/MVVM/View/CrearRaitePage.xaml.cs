@@ -11,7 +11,7 @@ namespace RAITES_RIDEUNI.MVVM.View
         {
             InitializeComponent();
 
-            // Asignamos el BindingContext al ViewModel
+            
             ViewModel = new CrearRaiteViewModel();
             BindingContext = ViewModel;
         }

@@ -41,7 +41,6 @@ namespace RAITES_RIDEUNI.MVVM.ViewModel
                 return;
             }
 
-            // 🔥 Navegar a la página principal
             await Shell.Current.GoToAsync("//PaginaPrincipal");
         }
     }

@@ -16,11 +16,12 @@ public class MensajesViewModel : BindableObject
     public ICommand EnviarCommand { get; }
     public ICommand EliminarCommand { get; }
 
+    [Obsolete]
     public MensajesViewModel()
     {
         Mensajes = new ObservableCollection<MensajeItem>();
 
-        // ?? Enviar Mensaje
+      
         EnviarCommand = new Command(() =>
         {
             if (!string.IsNullOrWhiteSpace(MensajeNuevo))
@@ -31,7 +32,7 @@ public class MensajesViewModel : BindableObject
             }
         });
 
-        // ?? Eliminar Mensaje (con confirmación)
+        
         EliminarCommand = new Command<MensajeItem>(async (msg) =>
         {
             if (msg == null) return;

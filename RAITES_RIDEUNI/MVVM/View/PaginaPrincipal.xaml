@@ -23,15 +23,11 @@
 
             <VerticalStackLayout Spacing="25"
                               HorizontalOptions="Center">
-
-
                 <Label Text="BIENVENID@S A RIDEUNI"
                     FontSize="32"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
                     TextColor="#003f7f"/>
-
-
                 <Button Text="Iniciar Sesion"
                      HeightRequest="55"
                      CornerRadius="15"

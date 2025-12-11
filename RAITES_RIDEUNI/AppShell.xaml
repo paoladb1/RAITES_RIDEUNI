@@ -6,63 +6,62 @@
     xmlns:views="clr-namespace:RAITES_RIDEUNI.MVVM.View"
     Title="RAITES_RIDEUNI">
 
-    <!-- Página Principal -->
+   
     <FlyoutItem Title="Inicio">
         <ShellContent 
             Route="PaginaPrincipal"
             ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
     </FlyoutItem>
 
-    <!-- Pedir Ride -->
+  
     <FlyoutItem Title="Pedir Ride">
         <ShellContent 
             Route="PedirRidePage"
             ContentTemplate="{DataTemplate views:PedirRidePage}" />
     </FlyoutItem>
 
-    <!-- Perfil -->
+   
     <FlyoutItem Title="Perfil">
         <ShellContent 
             Route="Perfil"
             ContentTemplate="{DataTemplate views:Perfil}" />
     </FlyoutItem>
 
-    <!-- Mis Raites -->
+    
     <FlyoutItem Title="Mis Raites">
         <ShellContent 
             Route="MisRaites"
             ContentTemplate="{DataTemplate views:MisRaites}" />
     </FlyoutItem>
 
-    <!-- Mensajes -->
     <FlyoutItem Title="Mensajes">
         <ShellContent 
             Route="Mensajes"
             ContentTemplate="{DataTemplate views:Mensajes}" />
     </FlyoutItem>
 
-    <!-- Inicio Ride -->
+   
     <FlyoutItem Title="Inicio Raite">
         <ShellContent 
             Route="HomePage"
             ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
 
-    <!-- Crear Raite -->
+   
     <FlyoutItem Title="Crear Raite">
         <ShellContent 
             Route="CrearRaitePage"
             ContentTemplate="{DataTemplate views:CrearRaitePage}" />
     </FlyoutItem>
 
-    <!-- Detalle Raite -->
+   
     <FlyoutItem Title="Detalle Raite">
         <ShellContent 
             Route="DetalleRaitePage"
             ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
     </FlyoutItem>
 
-    <!-- Solicitar Raite -->
+    
     <FlyoutItem Title="Solicitar Raite">
         <ShellContent 
             Route="SolicitarRaitePage"

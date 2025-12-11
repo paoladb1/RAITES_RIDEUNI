@@ -50,9 +50,7 @@
                                         WidthRequest="110"
                                         Command="{Binding BindingContext.EliminarCommand, Source={x:Reference PageRoot}}"
                                         CommandParameter="{Binding}"/>
-
                             </Grid>
-
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

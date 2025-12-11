@@ -7,11 +7,12 @@ namespace RAITES_RIDEUNI.MVVM.View
     {
         public ViajesDisponiblesViewModel ViewModel { get; private set; }
 
+        [Obsolete]
         public ViajesDisponiblesPage()
         {
             InitializeComponent();
 
-            // Asignamos el BindingContext
+           
             ViewModel = new ViajesDisponiblesViewModel();
             BindingContext = ViewModel;
         }

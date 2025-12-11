@@ -7,7 +7,7 @@ public partial class HomePage : ContentPage
     public HomePage()
     {
         InitializeComponent();
-        // Conecta con el HomeViewModel
+        
         BindingContext = (Application.Current.MainPage as AppShell).HomeVM;
     }
 

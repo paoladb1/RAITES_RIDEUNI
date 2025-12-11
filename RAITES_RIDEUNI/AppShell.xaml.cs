@@ -11,11 +11,10 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
 
-        // LOGIN Y REGISTRO
+        
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         Routing.RegisterRoute(nameof(CrearCuentaPage), typeof(CrearCuentaPage));
 
-        // SISTEMA
         Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
         Routing.RegisterRoute(nameof(PedirRidePage), typeof(PedirRidePage));
         Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));
@@ -26,8 +25,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(DetalleRaitePage), typeof(DetalleRaitePage));
         Routing.RegisterRoute(nameof(SolicitarRaitePage), typeof(SolicitarRaitePage));
         Routing.RegisterRoute(nameof(ViajesDisponiblesPage), typeof(ViajesDisponiblesPage));
-
-        // PERFIL – EDITAR
         Routing.RegisterRoute(nameof(EditarPerfilPage), typeof(EditarPerfilPage));
     }
 }

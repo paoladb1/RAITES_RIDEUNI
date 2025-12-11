@@ -12,6 +12,7 @@ public class DetalleRaiteViewModel
         SolicitarRaiteCommand = new Command(async () => await SolicitarRaite());
     }
 
+    [Obsolete]
     private async Task SolicitarRaite()
     {
         await Application.Current.MainPage.DisplayAlert("Solicitud Enviada", "Tu solicitud fue enviada al conductor.", "OK");

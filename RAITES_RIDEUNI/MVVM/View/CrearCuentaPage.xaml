@@ -5,9 +5,18 @@
              x:Class="RAITES_RIDEUNI.MVVM.View.CrearCuentaPage"
              Title="Crear Cuenta">
 
+   
     <ContentPage.BindingContext>
         <vm:CrearCuentaViewModel />
     </ContentPage.BindingContext>
+
+   
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
@@ -28,7 +37,13 @@
                    Text="{Binding ConfirmPassword}" />
 
             <Button Text="Crear cuenta"
-                    Command="{Binding CrearCuentaCommand}" />
+                    Command="{Binding CrearCuentaCommand}"
+                    BackgroundColor="#005BBB"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="55"
+                    FontAttributes="Bold" />
+
         </VerticalStackLayout>
     </ScrollView>
 
