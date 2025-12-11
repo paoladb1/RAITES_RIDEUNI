@@ -11,7 +11,6 @@ public partial class CrearCuentaPage : ContentPage
         string nombre = EntryNombre.Text;
         string email = EntryEmail.Text;
         string password = EntryPassword.Text;
-        string confirmPassword = EntryConfirmPassword.Text;
 
         if (string.IsNullOrWhiteSpace(nombre) ||
             string.IsNullOrWhiteSpace(email) ||
