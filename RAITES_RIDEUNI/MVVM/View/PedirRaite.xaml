@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RAITES_RIDEUNI.MVVM.View.PedirRaite"
-             Title="PedirRaite">
+             x:Class="RAITES_RIDEUNI.MVVM.View.PedirRidePage"
+             Title="Pedir Ride">
+
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#6BA8FF" Offset="0"/>
@@ -13,102 +14,84 @@
     <ScrollView>
         <VerticalStackLayout Padding="25" Spacing="22">
 
-
             <Frame Padding="0" HasShadow="True" CornerRadius="20">
                 <Image Source="mapa.png"
-                   HeightRequest="200"
-                   Aspect="AspectFill"
-                   HorizontalOptions="Center"/>
+                       HeightRequest="200"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center"/>
             </Frame>
 
-
-            <VerticalStackLayout Spacing="2">
-                <Label Text="Encuentra tu raite ideal"
+            <Label Text="Encuentra tu raite ideal"
                    FontSize="24"
                    FontAttributes="Bold"
                    TextColor="#003F88"
                    HorizontalTextAlignment="Center"/>
 
-
-            </VerticalStackLayout>
-
-
-
             <Frame BackgroundColor="White"
-               CornerRadius="25"
-               Padding="25"
-               HasShadow="True">
+                   CornerRadius="25"
+                   Padding="25"
+                   HasShadow="True">
 
                 <VerticalStackLayout Spacing="18">
 
                     <Frame HasShadow="False" BackgroundColor="#F2F6FF"
-                       CornerRadius="15" Padding="12">
+                           CornerRadius="15" Padding="12">
                         <Grid ColumnDefinitions="Auto,*">
                             <Image Source="ubicacion.png"
-                               HeightRequest="22" WidthRequest="22"/>
-
+                                   HeightRequest="22" WidthRequest="22"/>
                             <Entry Grid.Column="1"
-                               Placeholder="Destino"
-                               PlaceholderColor="#888"
-                               TextColor="Black"
-                               BackgroundColor="Transparent"/>
+                                   Placeholder="Destino"
+                                   PlaceholderColor="#888"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent"/>
                         </Grid>
                     </Frame>
-
 
                     <Frame HasShadow="False" BackgroundColor="#F2F6FF"
-                       CornerRadius="15" Padding="12">
+                           CornerRadius="15" Padding="12">
                         <Grid ColumnDefinitions="Auto,*">
                             <Image Source="reloj.png"
-                               HeightRequest="22" WidthRequest="22"/>
-
+                                   HeightRequest="22" WidthRequest="22"/>
                             <Entry Grid.Column="1"
-                               Placeholder="Hora de salida"
-                               PlaceholderColor="#888"
-                               TextColor="Black"
-                               BackgroundColor="Transparent"/>
+                                   Placeholder="Hora de salida"
+                                   PlaceholderColor="#888"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent"/>
                         </Grid>
                     </Frame>
 
-
-
                     <Label Text="Tipo de ride"
-                       FontAttributes="Bold"
-                       TextColor="#003F88"/>
+                           FontAttributes="Bold"
+                           TextColor="#003F88"/>
 
                     <HorizontalStackLayout Spacing="10">
 
-                        <Frame Padding="12" CornerRadius="15"
-                           BackgroundColor="#E8F0FF">
-                            <Label Text="Rapido" TextColor="#003F88"/>
+                        <Frame Padding="12" CornerRadius="15" BackgroundColor="#E8F0FF">
+                            <Label Text="Rápido" TextColor="#003F88"/>
                         </Frame>
 
-                        <Frame Padding="12" CornerRadius="15"
-                           BackgroundColor="#E8F0FF">
-                            <Label Text="Economico" TextColor="#003F88"/>
+                        <Frame Padding="12" CornerRadius="15" BackgroundColor="#E8F0FF">
+                            <Label Text="Económico" TextColor="#003F88"/>
                         </Frame>
 
-                        <Frame Padding="12" CornerRadius="15"
-                           BackgroundColor="#E8F0FF">
+                        <Frame Padding="12" CornerRadius="15" BackgroundColor="#E8F0FF">
                             <Label Text="Compartido" TextColor="#003F88"/>
                         </Frame>
 
                     </HorizontalStackLayout>
 
-
                 </VerticalStackLayout>
             </Frame>
 
-
             <Button Text="Buscar rides disponibles"
-                HeightRequest="55"
-                CornerRadius="20"
-                BackgroundColor="#005BBB"
-                TextColor="White"
-                FontAttributes="Bold"
-                FontSize="18"
-                Margin="0,10"
-                Clicked="OnBuscarClicked"/>
+                    HeightRequest="55"
+                    CornerRadius="20"
+                    BackgroundColor="#005BBB"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Margin="0,10"
+                    Clicked="OnBuscarClicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

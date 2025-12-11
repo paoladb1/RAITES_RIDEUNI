@@ -3,38 +3,48 @@ using System.Windows.Input;
 
 namespace RAITES_RIDEUNI.MVVM.ViewModel;
 
+public class MensajeItem
+{
+    public string Texto { get; set; }
+}
+
 public class MensajesViewModel : BindableObject
 {
-    public ObservableCollection<MensajesViewModel> Mensajes { get; set; }
+    public ObservableCollection<MensajeItem> Mensajes { get; set; }
     public string MensajeNuevo { get; set; }
-
-
-    public string Texto { get; set; }
 
     public ICommand EnviarCommand { get; }
     public ICommand EliminarCommand { get; }
 
     public MensajesViewModel()
     {
-        Mensajes = new ObservableCollection<MensajesViewModel>();
+        Mensajes = new ObservableCollection<MensajeItem>();
 
+        // ?? Enviar Mensaje
         EnviarCommand = new Command(() =>
         {
             if (!string.IsNullOrWhiteSpace(MensajeNuevo))
             {
-                Mensajes.Add(new MensajesViewModel { Texto = MensajeNuevo });
+                Mensajes.Add(new MensajeItem { Texto = MensajeNuevo });
                 MensajeNuevo = string.Empty;
                 OnPropertyChanged(nameof(MensajeNuevo));
             }
         });
 
-        EliminarCommand = new Command<MensajesViewModel>((msg) =>
+        // ?? Eliminar Mensaje (con confirmación)
+        EliminarCommand = new Command<MensajeItem>(async (msg) =>
         {
-            if (msg != null && Mensajes.Contains(msg))
+            if (msg == null) return;
+
+            bool confirmar = await Application.Current.MainPage.DisplayAlert(
+                "Eliminar mensaje",
+                "¿Deseas eliminar este mensaje?",
+                "Sí", "No");
+
+            if (confirmar)
             {
                 Mensajes.Remove(msg);
             }
         });
-
     }
 }

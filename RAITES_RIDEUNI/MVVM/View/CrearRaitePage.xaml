@@ -4,8 +4,6 @@
              x:Class="RAITES_RIDEUNI.MVVM.View.CrearRaitePage"
              Title="CrearRaitePage">
 
-    
-
     <ScrollView>
         <VerticalStackLayout Padding="25" Spacing="20">
 
@@ -15,18 +13,15 @@
                    TextColor="#003E7E"
                    HorizontalOptions="Center"/>
 
-
             <Label Text="Punto de Origen" FontAttributes="Bold" TextColor="#003E7E"/>
             <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False">
                 <Entry Placeholder="Ubicacion actual" TextColor="#003E7E" Text="{Binding Origen}" HeightRequest="50"/>
             </Frame>
 
-
             <Label Text="Destino" FontAttributes="Bold" TextColor="#003E7E"/>
             <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False">
                 <Entry Placeholder="A donde vas?" TextColor="#003E7E" Text="{Binding Destino}" HeightRequest="50"/>
             </Frame>
-
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
                 <Frame BackgroundColor="#EEF3FF" CornerRadius="15" Padding="0" HasShadow="False" HeightRequest="50">
@@ -45,7 +40,6 @@
                     <Entry Placeholder="Precio por asiento (MXN)" TextColor="#003E7E" Text="{Binding PrecioPorAsiento}" Keyboard="Numeric"/>
                 </Frame>
             </Grid>
-
 
             <Button Text="Publicar Raite Ahora"
                     HeightRequest="60"

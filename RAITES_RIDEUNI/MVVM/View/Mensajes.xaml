@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RAITES_RIDEUNI.MVVM.View.Mensajes"
-             Title="Mensajes">
-  
+             Title="Mensajes"
+             x:Name="PageRoot">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -14,7 +14,6 @@
 
     <Grid RowDefinitions="*,Auto" Padding="15">
 
-
         <CollectionView ItemsSource="{Binding Mensajes}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -24,16 +23,15 @@
 
                         <Grid ColumnDefinitions="*,Auto">
 
-
                             <Label Text="{Binding Texto}"
-                                   FontSize="16" />
-
+                                   FontSize="16" 
+                                   TextColor="Black"/>
 
                             <Button Text="X"
                                     Grid.Column="1"
                                     FontSize="15"
                                     FontAttributes="Bold"
-                                    BackgroundColor="Blue"
+                                    BackgroundColor="#005BBB"
                                     TextColor="White"
                                     CornerRadius="15"
                                     WidthRequest="45"
@@ -43,24 +41,18 @@
                                     Command="{Binding BindingContext.EliminarCommand,
                                                       Source={x:Reference PageRoot}}"
                                     CommandParameter="{Binding}" />
-
                         </Grid>
-
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
-
             <Entry Grid.Column="0"
                    Placeholder="Escribe un mensaje"
                    Text="{Binding MensajeNuevo}"
                    BackgroundColor="White"
                    TextColor="Black"
                    HeightRequest="50"/>
-
             <Button Grid.Column="1"
                     Text="Enviar"
                     Command="{Binding EnviarCommand}"
@@ -69,8 +61,6 @@
                     WidthRequest="90"
                     HeightRequest="45"
                     CornerRadius="20"/>
-
         </Grid>
-
     </Grid>
 </ContentPage>

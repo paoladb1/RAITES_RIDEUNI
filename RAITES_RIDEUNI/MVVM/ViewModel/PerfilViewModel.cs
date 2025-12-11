@@ -1,6 +1,8 @@
-using Ride.Services;
+using RAITES_RIDEUNI.Services;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Microsoft.Maui.Controls;
 
 namespace RAITES_RIDEUNI.MVVM.ViewModel;
 
@@ -20,10 +22,13 @@ public class PerfilViewModel : INotifyPropertyChanged
     public string Disponible { get => _disponible; set { _disponible = value; OnChanged(); } }
     public string Descripcion { get => _descripcion; set { _descripcion = value; OnChanged(); } }
 
+    public ICommand GuardarCommand { get; }
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     public PerfilViewModel()
     {
+        GuardarCommand = new Command(GuardarDatos);
         CargarDatos();
     }
 
@@ -37,7 +42,19 @@ public class PerfilViewModel : INotifyPropertyChanged
         Descripcion = PerfilService.Descripcion;
     }
 
+    private void GuardarDatos()
+    {
+        PerfilService.Nombre = Nombre;
+        PerfilService.Rol = Rol;
+        PerfilService.Universidad = Universidad;
+        PerfilService.Grupo = Grupo;
+        PerfilService.Disponible = Disponible;
+        PerfilService.Descripcion = Descripcion;
+
+        Application.Current.MainPage.DisplayAlert("Éxito", "Datos guardados correctamente", "OK");
+        Shell.Current.GoToAsync(".."); // Regresa a Perfil
+    }
+
     void OnChanged([CallerMemberName] string name = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }
-

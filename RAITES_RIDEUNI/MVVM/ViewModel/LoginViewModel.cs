@@ -1,33 +1,48 @@
-using RAITES_RIDEUNI.MVVM.View;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace RAITES_RIDEUNI.MVVM.ViewModel;
-
-public class LoginViewModel
+namespace RAITES_RIDEUNI.MVVM.ViewModel
 {
-    public string Correo { get; set; }
-    public string Contrase�a { get; set; }
-
-    public ICommand IniciarSesionCommand { get; }
-    public ICommand CrearCuentaCommand { get; }
-
-    public LoginViewModel()
+    public class LoginViewModel : BindableObject
     {
-        IniciarSesionCommand = new Command(async () => await IniciarSesion());
-        CrearCuentaCommand = new Command(async () => await Shell.Current.GoToAsync(nameof(RegistroPage)));
-    }
-
-    private async Task IniciarSesion()
-    {
-        if (string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(Contrase�a))
+        private string correo;
+        public string Correo
         {
-            await Application.Current.MainPage.DisplayAlert("Error", "Completa todos los campos.", "OK");
-            return;
+            get => correo;
+            set
+            {
+                correo = value;
+                OnPropertyChanged();
+            }
         }
 
+        private string contraseña;
+        public string Contraseña
+        {
+            get => contraseña;
+            set
+            {
+                contraseña = value;
+                OnPropertyChanged();
+            }
+        }
 
-        await Shell.Current.GoToAsync(nameof(PaginaPrincipal));
+        public ICommand IniciarSesionCommand { get; }
+
+        public LoginViewModel()
+        {
+            IniciarSesionCommand = new Command(async () => await IniciarSesion());
+        }
+
+        private async Task IniciarSesion()
+        {
+            if (string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(Contraseña))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Completa todos los campos.", "OK");
+                return;
+            }
+
+            // 🔥 Navegar a la página principal
+            await Shell.Current.GoToAsync("//PaginaPrincipal");
+        }
     }
-
-
 }

@@ -1,46 +1,41 @@
-using Ride.Services;
 using System.Windows.Input;
+using RAITES_RIDEUNI.Services;
 
-namespace RAITES_RIDEUNI.MVVM.ViewModel;
-
-public class EditarPerfilViewModel : BindableObject
+namespace RAITES_RIDEUNI.MVVM.ViewModel
 {
-    public string Nombre { get; set; }
-    public string Rol { get; set; }
-    public string Universidad { get; set; }
-    public string Grupo { get; set; }
-    public string Disponible { get; set; }
-    public string Descripcion { get; set; }
-
-    public ICommand GuardarCommand { get; }
-
-    public EditarPerfilViewModel()
+    public class EditarPerfilViewModel
     {
-        Nombre = PerfilService.Nombre;
-        Rol = PerfilService.Rol;
-        Universidad = PerfilService.Universidad;
-        Grupo = PerfilService.Grupo;
-        Disponible = PerfilService.Disponible;
-        Descripcion = PerfilService.Descripcion;
+        public string Nombre { get; set; }
+        public string Rol { get; set; }
+        public string Universidad { get; set; }
+        public string Grupo { get; set; }
+        public string Disponible { get; set; }
+        public string Descripcion { get; set; }
 
-        GuardarCommand = new Command(Guardar);
-    }
+        public ICommand GuardarCommand { get; }
 
-    private async void Guardar()
-    {
-        PerfilService.Nombre = Nombre;
-        PerfilService.Rol = Rol;
-        PerfilService.Universidad = Universidad;
-        PerfilService.Grupo = Grupo;
-        PerfilService.Disponible = Disponible;
-        PerfilService.Descripcion = Descripcion;
+        public EditarPerfilViewModel()
+        {
+            Nombre = PerfilService.Nombre;
+            Rol = PerfilService.Rol;
+            Universidad = PerfilService.Universidad;
+            Grupo = PerfilService.Grupo;
+            Disponible = PerfilService.Disponible;
+            Descripcion = PerfilService.Descripcion;
 
-        await Application.Current.MainPage.DisplayAlert(
-            "Perfil",
-            "Datos guardados correctamente",
-            "OK"
-        );
+            GuardarCommand = new Command(async () => await Guardar());
+        }
 
-        await Shell.Current.Navigation.PopAsync();
+        private async Task Guardar()
+        {
+            PerfilService.Nombre = Nombre;
+            PerfilService.Rol = Rol;
+            PerfilService.Universidad = Universidad;
+            PerfilService.Grupo = Grupo;
+            PerfilService.Disponible = Disponible;
+            PerfilService.Descripcion = Descripcion;
+
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }

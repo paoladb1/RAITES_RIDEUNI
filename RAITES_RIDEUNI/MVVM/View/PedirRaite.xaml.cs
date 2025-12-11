@@ -1,23 +1,24 @@
+using RAITES_RIDEUNI.MVVM.ViewModel;
 using Ride.MVVM.Services;
 
-namespace RAITES_RIDEUNI.MVVM.View;
-
-public partial class PedirRide : ContentPage
+namespace RAITES_RIDEUNI.MVVM.View
 {
-    private readonly MockService _service = MockService.Instance;
-
-    public PedirRide()
+    public partial class PedirRidePage : ContentPage
     {
-        InitializeComponent();
-    }
+        private readonly MockService _service = MockService.Instance;
 
-    private void InitializeComponent()
-    {
-        throw new NotImplementedException();
-    }
+        public PedirRidePage()
+        {
+            InitializeComponent();
+        }
 
-    private async void OnBuscarClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new MisRaites());
+        private async void OnBuscarClicked(object sender, EventArgs e)
+        {
+           
+            await Navigation.PushAsync(new ViajesDisponiblesPage
+            {
+                BindingContext = new ViajesDisponiblesViewModel()
+            });
+        }
     }
 }

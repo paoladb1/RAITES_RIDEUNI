@@ -65,15 +65,7 @@
         </ScrollView>
 
 
-        <Frame Grid.Row="1" Padding="20,10,20,20" BackgroundColor="White" HasShadow="True" CornerRadius="15">
-            <Button Text="Solicitar Raite" 
-                  HeightRequest="55" 
-                  CornerRadius="15"
-                  BackgroundColor="#1A73E8"
-                  TextColor="White"
-                  FontAttributes="Bold"
-                  Command="{Binding SolicitarRaiteCommand}" />
-        </Frame>
+      
 
     </Grid>
 </ContentPage>

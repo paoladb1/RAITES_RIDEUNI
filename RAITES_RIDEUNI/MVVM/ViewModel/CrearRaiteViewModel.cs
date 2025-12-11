@@ -1,16 +1,14 @@
 using Microsoft.Maui.Controls;
 using RAITES_RIDEUNI.MVVM.View;
-
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Ride.MVVM.ViewModel
+namespace RAITES_RIDEUNI.MVVM.ViewModel
 {
     public class CrearRaiteViewModel : BindableObject
     {
-
         public string Origen { get; set; }
         public string Destino { get; set; }
         public DateTime FechaSalida { get; set; } = DateTime.Now;
@@ -18,9 +16,8 @@ namespace Ride.MVVM.ViewModel
         public int AsientosDisponibles { get; set; }
         public decimal PrecioPorAsiento { get; set; }
 
-
+        // Colección compartida para ViajesDisponiblesPage
         public static ObservableCollection<string> Raites { get; set; } = new ObservableCollection<string>();
-
 
         public ICommand PublicarCommand { get; }
 
@@ -31,7 +28,6 @@ namespace Ride.MVVM.ViewModel
 
         private async Task PublicarRaite()
         {
-
             if (string.IsNullOrWhiteSpace(Origen) || string.IsNullOrWhiteSpace(Destino) ||
                 AsientosDisponibles <= 0 || PrecioPorAsiento <= 0)
             {
@@ -41,11 +37,13 @@ namespace Ride.MVVM.ViewModel
             }
 
             string raite = $"{Origen} - {Destino}    {FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm}  Asientos: {AsientosDisponibles}    ${PrecioPorAsiento}";
+
+            // Se agrega automáticamente a la colección estática
             Raites.Add(raite);
 
             await Application.Current.MainPage.DisplayAlert("Éxito", "Raite publicado correctamente.", "OK");
 
-
+            // Limpiar campos
             Origen = Destino = "";
             AsientosDisponibles = 0;
             PrecioPorAsiento = 0;
@@ -59,7 +57,8 @@ namespace Ride.MVVM.ViewModel
             OnPropertyChanged(nameof(AsientosDisponibles));
             OnPropertyChanged(nameof(PrecioPorAsiento));
 
-
+            // Navegar automáticamente a ViajesDisponiblesPage
             await Shell.Current.GoToAsync(nameof(ViajesDisponiblesPage));
         }
-    }  }
+    }
+}

@@ -10,7 +10,7 @@ public class PaginaPrincipalViewModel
     {
         BuscarRaiteCommand = new Command(async () =>
         {
-            await Shell.Current.GoToAsync(nameof(View.PedirRide));
+            await Shell.Current.GoToAsync(nameof(View.PedirRidePage));
         });
     }
 }

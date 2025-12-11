@@ -11,13 +11,12 @@ public class MisRidesViewModel : BindableObject
 
     public MisRidesViewModel()
     {
-
         Rides = new ObservableCollection<string>
-            {
-                "Conductor: Carlos Mendez - 5:15 PM",
-                "Conductora: Ana Lopez - 7:15 AM",
-                "Conductor: Rodolfo - 1:00 PM"
-            };
+        {
+            "Conductor: Carlos Mendez - 5:15 PM",
+            "Conductora: Ana Lopez - 7:15 AM",
+            "Conductor: Rodolfo - 1:00 PM"
+        };
 
         EliminarCommand = new Command<string>(Eliminar);
     }
@@ -28,4 +27,3 @@ public class MisRidesViewModel : BindableObject
             Rides.Remove(ride);
     }
 }
-
